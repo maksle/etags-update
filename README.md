@@ -18,10 +18,9 @@ Now ctags -e knows how to tag xsl files. Now I include this in my .emacs to set 
 ```elisp
 (add-hook 'nxml-mode-hook
           (lambda ()
-            (if (string-match-p "/my/xslt/project/path" (buffer-file-name))
-                (progn
-                  (visit-tags-table "~/Documents/learn/xslt/TAGS"  t)
-                  (require 'etags-update)
-                  (etags-update-mode)))
+            (when (string-match-p "/my/xslt/project/path" (buffer-file-name))
+              (visit-tags-table "~/Documents/learn/xslt/TAGS"  t)
+              (require 'etags-update)
+              (etags-update-mode))))
 ```
 Now when I'm working on .xsl files in my project location, my TAGS file will be updated on file save.
