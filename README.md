@@ -7,13 +7,13 @@ Inspired by https://github.com/mattkeller/etags-update but I wanted to write my 
 This is simpler but shorter and is not a global mode.
 
 For example, I wanted etags for xslt. I set this up in ~/.ctags (I prefer exuberant-ctags to etags):
-
+```
 --langdef=xslt
 --langmap=xslt:.xsl
 --regex-xslt=/<xsl:template name="([^"]*)"/1/
 --regex-xslt=/<xsl:template match="[^"]*"[ \t\n]+mode="([^"]*)"/1/
 --regex-xslt=/<xsl:variable name="([^"]+)"/1/
-
+```
 Now ctags -e knows how to tag xsl files. Now I include this in my .emacs to set up the mode I edit xslt files with:
 ```elisp
 (add-hook 'nxml-mode-hook
