@@ -4,7 +4,7 @@ etags-update
 Update etags on save.
 
 Inspired by https://github.com/mattkeller/etags-update but I wanted to write my own to imporove my elisp.
-This is simpler but shorter and is not a global mode. Also, it doesn't rely on an external perl file as I wanted everything done in elisp.
+This is simpler but shorter and is not a global mode since I don't use etags for everything. Also, it doesn't rely on an external perl file as I wanted everything done in elisp.
 
 For example, I wanted etags for xslt. I set this up in ~/.ctags (I prefer exuberant-ctags to etags):
 ```
