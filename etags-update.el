@@ -99,9 +99,9 @@ deleted the section, false if not."
   :lighter " etu"
   (if etags-update-mode
       (add-hook 'after-save-hook 'etu/etags-update nil 'make-it-local)
-    (remove-hook 'after-save-hook 'etu/etags-update 'make-it-local)))
+    (remove-hook 'after-save-hook 'etu/etags-update 'make-it-local))
+  (setq tags-revert-without-query t))
 
-(setq tags-revert-without-query t)
-(add-hook 'nxml-mode-hook 'etags-update-mode)
+
 
 (provide 'etags-update)
